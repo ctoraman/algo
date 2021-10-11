@@ -3,14 +3,14 @@
  * cagritoraman@gmail.com
  */
 
-public class CountSort {
+public class CountSort extends Sort{
 
     /**
      * Count sort algorithm
      * @param arr to be sorted
      * @return sorted arr
      */
-    public static void countSort(int[] arr){
+    public void sort(int[] arr){
         //1. find max
         int max = arr[0];
         for(int i=1; i<arr.length; i++){

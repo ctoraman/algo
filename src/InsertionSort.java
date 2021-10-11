@@ -3,14 +3,14 @@
  * cagritoraman@gmail.com
  */
 
-public class InsertionSort {
+public class InsertionSort extends Sort{
 
     /**
      * Insertion sort algorithm
      * @param arr to be sorted
      * @return sorted arr
      */
-    public static void insertionSortV1(int[] arr){
+    public void sortV2(int[] arr){
         for(int i=1; i<arr.length; i++){
             int j=i-1;
             int k=i;
@@ -24,7 +24,8 @@ public class InsertionSort {
         }
     }
 
-    public static void insertionSortV2(int[] arr){
+    // Faster version that avoids many swap operations.
+    public void sort(int[] arr){
         for(int i=1; i<arr.length; i++){
             int j=i-1;
             while(j >= 0 && arr[i] < arr[j]){

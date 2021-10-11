@@ -3,14 +3,14 @@
  * cagritoraman@gmail.com
  */
 
-public class SelectionSort {
+public class SelectionSort extends Sort{
 
     /**
      * Selection sort algorithm
      * @param arr to be sorted
      * @return sorted arr
      */
-    public static void selectionSort(int[] arr){
+    public void sort(int[] arr){
         for(int i=0; i<arr.length; i++){
             int min=arr[i];
             int minIndex=i;
