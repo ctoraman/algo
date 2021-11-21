@@ -1,3 +1,7 @@
+/**
+ * @author Cagri Toraman
+ * cagritoraman@gmail.com
+ */
 import java.util.Arrays;
 
 public class Intersection {

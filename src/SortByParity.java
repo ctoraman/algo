@@ -1,9 +1,9 @@
-import java.util.Arrays;
-
 /**
  * @author Cagri Toraman
  * cagritoraman@gmail.com
  */
+
+import java.util.Arrays;
 
 public class SortByParity {
 
