@@ -3,36 +3,22 @@
  * cagritoraman@gmail.com
  */
 
-public class Anagram {
+public class LargestPerimeter {
 
     /**
-     * Given two strings s and t, return true if t is an anagram of s, and false otherwise.
-     * @param s
-     * @param t
+     * Given an integer array nums, return the largest perimeter of a triangle with a non-zero area,
+     *  formed from three of these lengths. If it is impossible to form any triangle of a non-zero area, return 0.
+     * @param nums
      * @return
      */
-    public static boolean isAnagram(String s, String t) {
-        if( s.length() != t.length()){
-            return false;
-        }
-        char[] sArr = s.toCharArray();
-        char[] tArr = t.toCharArray();
-        int[] sIntArr = new int[sArr.length];
-        for(int i=0; i<sIntArr.length; i++){
-            sIntArr[i] = sArr[i];
-        }
-        int[] tIntArr = new int[sArr.length];
-        for(int i=0; i<tIntArr.length; i++){
-            tIntArr[i] = tArr[i];
-        }
-        sort(sIntArr);
-        sort(tIntArr);
-        for(int i=0, j=0; i<sIntArr.length && j<tIntArr.length; i++,j++){
-            if( sIntArr[i] != tIntArr[j]){
-                return false;
+    public static int largestPerimeter(int[] nums) {
+        sort(nums);
+        for(int i=nums.length-1; i>=2; i--){
+            if( nums[i] < nums[i-1] + nums[i-2]){
+                return nums[i] + nums[i-1] + nums[i-2];
             }
         }
-        return true;
+        return 0;
     }
 
     public static void sort(int[] arr){
@@ -78,10 +64,10 @@ public class Anagram {
     }
 
     public static void main(String[] args) {
-        String s = "anagram", t = "nagaram";
-        boolean result = isAnagram(s, t);
+        int[] nums = {3,6,2,3};
+        int result = largestPerimeter(nums);
         System.out.println(result);
-        //Runtime: 16 ms, faster than 16.16% of Java online submissions for Valid Anagram.
-        //Memory Usage: 41 MB, less than 14.82% of Java online submissions for Valid Anagram.
+        //Runtime: 20 ms, faster than 5.87% of Java online submissions for Largest Perimeter Triangle.
+        //Memory Usage: 51.6 MB, less than 28.64% of Java online submissions for Largest Perimeter Triangle.
     }
 }
