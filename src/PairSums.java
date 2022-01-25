@@ -75,7 +75,7 @@ class PairSums {
         int expected_2 = 4;
         int output_2 = numberOfWays(arr_2, k_2);
         check(expected_2, output_2);
-        
+
     }
     public static void main(String[] args) {
         new PairSums().run();
